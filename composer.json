@@ -16,9 +16,7 @@
         "unisharp/laravel-ckeditor": "^4.6",
         "league/flysystem-aws-s3-v3": "~1.0",
         "league/flysystem-rackspace": "~1.0",
-        "cornford/googlmapper":"2.*",
-    
-
+        "cornford/googlmapper":"2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

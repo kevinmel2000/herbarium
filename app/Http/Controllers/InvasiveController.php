@@ -68,6 +68,8 @@ class InvasiveController extends Controller
         
         $file = $request->file('image');
         $fileName = $file->getClientOriginalName();
+      
+        
         $request->file('image')->move("ias/",$fileName);
 
         if ($request->file('image2') != null){
@@ -116,12 +118,12 @@ class InvasiveController extends Controller
         $author   ->save();
 
         $charac   = new CharacterSpecies;
-        $charac   -> picture_species                                = $fileName;
-        $charac   -> picture_species2                               = $fileName1;
-        $charac   -> picture_species3                               = $fileName2;
-        $charac   -> picture_species4                               = $fileName3;
-        $charac   -> picture_species5                               = $fileName4;
-        $charac   -> picture_species6                               = $fileName5;
+        $charac->picture_species  = $fileName;
+        $charac->picture_species2 = $fileName1;
+        $charac->picture_species3 = $fileName2;
+        $charac->picture_species4 = $fileName3;
+        $charac->picture_species5 = $fileName4;
+        $charac->picture_species6 = $fileName5;
         $charac   -> save();
 
         $family   = new Family;
@@ -254,7 +256,7 @@ class InvasiveController extends Controller
         $ctrl    -> biologycal_ctrl                           = $request   ->input('biological_ctrl');
         $ctrl    -> save();
 
-        if ($request->file('image2') != null){
+        if ($request->file('image') != null){
             $file = $request->file('image');
             $fileName = $file->getClientOriginalName();
             $request->file('image')->move("ias/",$fileName);

@@ -175,7 +175,7 @@
                             <div class="carousel-inner">
                                 @if(isset($speciment_ias->species->character->picture_species))
                                     <div class="item active">
-                                        <a href="{{url('/imageuih', $speciment_ias->species->character->picture_species)}}" target="_blank">
+                                        <a href="{{url('/ias', $speciment_ias->species->character->picture_species)}}" target="_blank">
                                             <img class="img-rounded img-responsive" src="{{asset('ias/' .$speciment_ias->species->character->picture_species) }}" id="" alt="{{$speciment_ias->species->character->description1}}" width="700" max-height="600">
                                         </a>
                                     </div>
@@ -187,7 +187,7 @@
 
                                 @if(isset($speciment_ias->species->character->picture_species2))
                                     <div class="item">
-                                        <a href="{{url('/imageuih', $speciment_ias->species->character->picture_species2)}}" target="_blank">
+                                        <a href="{{url('/ias', $speciment_ias->species->character->picture_species2)}}" target="_blank">
                                             <img class="img-rounded img-responsive" src="{{asset('ias/' .$speciment_ias->species->character->picture_species2) }}" id="" alt="IAS 2" width="700" height="auto">
                                         </a>
                                     </div>
@@ -195,7 +195,7 @@
 
                                 @if(isset($speciment_ias->species->character->picture_species3))
                                     <div class="item">
-                                        <a href="{{url('/imageuih', $speciment_ias->species->character->picture_species3)}}" target="_blank">
+                                        <a href="{{url('/ias', $speciment_ias->species->character->picture_species3)}}" target="_blank">
                                             <img class="img-rounded img-responsive" src="{{asset('ias/' .$speciment_ias->species->character->picture_species3) }}" id="" alt="IAS 3" width="700" height="auto">
                                         </a>
                                     </div>
@@ -203,7 +203,7 @@
 
                                 @if(isset($speciment_ias->species->character->picture_species4))
                                     <div class="item">
-                                        <a href="{{url('/imageuih', $speciment_ias->species->character->picture_species4)}}" target="_blank">
+                                        <a href="{{url('/ias', $speciment_ias->species->character->picture_species4)}}" target="_blank">
                                             <img class="img-rounded img-responsive" src="{{asset('ias/' .$speciment_ias->species->character->picture_species4) }}" id="" alt="IAS 1" width="700" height="auto">
                                         </a>
                                     </div>
@@ -211,7 +211,7 @@
 
                                 @if(isset($speciment_ias->species->character->picture_species5))
                                     <div class="item">
-                                        <a href="{{url('/imageuih', $speciment_ias->species->character->picture_species5)}}" target="_blank">
+                                        <a href="{{url('/ias', $speciment_ias->species->character->picture_species5)}}" target="_blank">
                                             <img class="img-rounded img-responsive" src="{{asset('ias/' .$speciment_ias->species->character->picture_species5) }}" id="" alt="IAS 2" width="700" height="auto">
                                         </a>
                                     </div>
@@ -219,7 +219,7 @@
 
                                 @if(isset($speciment_ias->species->character->picture_species6))
                                     <div class="item">
-                                        <a href="{{url('/imageuih', $speciment_ias->species->character->picture_species6)}}" target="_blank">
+                                        <a href="{{url('/ias', $speciment_ias->species->character->picture_species6)}}" target="_blank">
                                             <img class="img-rounded img-responsive" src="{{asset('ias/' .$speciment_ias->species->character->picture_species6) }}" id="" alt="IAS 3" width="700" height="auto">
                                         </a>
                                     </div>
