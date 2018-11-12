@@ -22,7 +22,7 @@
                                             @foreach($tasks as $task)
                                                 <h5> 
                                                     {{ $task['name'] }}
-                                                    <buttom type="button col-sm-1" class="btn btn-{{$task['color']}} pull-right">{{$task['progress']}}</button>
+                                                    <buttom type="button col-sm-1" class="btn btn-{{$task['color']}} pull-right">{{$task['value']}}</button>
                                                 </h5> 
                                                 <div class="progress">
                                                     <div class="progress-bar progress-bar-{{$task['color']}}" style="width: {{$task['progress']}}%"></div>

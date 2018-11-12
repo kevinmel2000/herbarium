@@ -88,7 +88,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->species->subspecies))
+                                @if(!empty($speciment_herbarium->species->subspecies))
                                     <div class="col-md-12" style="margin-top:10px" >
                                         <label for="subspecies" class="col-md-3 col-md-offset-1" style="text-align:left">Subspecies</label>
                                         <span class="col-md-8" align="justify">
@@ -97,7 +97,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->species->variety))
+                                @if(!empty($speciment_herbarium->species->variety))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="variety" class="col-md-3 col-md-offset-1" style="text-align:left">Variety</label>
                                         <span class="col-md-8" align="justify">
@@ -106,7 +106,7 @@
                                     </div>
                                 @endif
                                 
-                                @if(isset($speciment_herbarium->common_name))
+                                @if(!empty($speciment_herbarium->common_name))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="common" class="col-md-3 col-md-offset-1" style="text-align:left">Common Name</label>
                                         <span class="col-md-8" align="justify">
@@ -115,7 +115,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->species->origin_species))
+                                @if(!empty($speciment_herbarium->species->origin_species))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="origin" class="col-md-3 col-md-offset-1" style="text-align:left">Origin</label>
                                         <span class="col-md-8" align="justify">
@@ -124,7 +124,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->species->species_synonim))
+                                @if(!empty($speciment_herbarium->species->species_synonim))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="synonim" class="col-md-3 col-md-offset-1" style="text-align:left">Synonim</label>
                                         <span class="col-md-8" align="justify">
@@ -133,7 +133,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->species->venacular->venacular_name))
+                                @if(!empty($speciment_herbarium->species->venacular->venacular_name))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="synonim" class="col-md-3 col-md-offset-1" style="text-align:left">Venacular Name</label>
                                         <span class="col-md-8" align="justify">
@@ -142,7 +142,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->species->description_species))
+                                @if(!empty($speciment_herbarium->species->description_species))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="description" class="col-md-3 col-md-offset-1" style="text-align:left">Description</label>
                                         <span class="col-md-8" align="justify">
@@ -151,7 +151,7 @@
                                     </div>
                                 @endif
 
-                                @if(isset($speciment_herbarium->notes))
+                                @if(!empty($speciment_herbarium->notes))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="description" class="col-md-3 col-md-offset-1" style="text-align:left">Notes</label>
                                         <span class="col-md-8" align="justify">

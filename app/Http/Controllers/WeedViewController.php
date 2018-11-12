@@ -9,6 +9,8 @@ use App\Model\Herbarium;
 use App\Model\Family;
 use App\Model\Genus;
 use App\Model\Species;
+use App\Model\AuthorIdent;
+use App\Model\Collector;
 use Illuminate\Support\Facades\DB;
 
 class WeedViewController extends Controller
@@ -17,82 +19,70 @@ class WeedViewController extends Controller
         $data['tasks'] = [
                 [
                         'name' => 'Family',
-                        'progress' => $this->family(),
+                        'progress' => $this->family()/1024*100,
+                        'value' => $this->family(),
                         'color' => 'danger'
                 ],
                 [
                         'name' => 'Genus',
-                        'progress' => $this->genus(),
+                        'progress' => $this->genus()/1024*100,
+                        'value' => $this->genus(),
                         'color' => 'primary'
                 ],
                 [
                         'name' => 'Species',
-                        'progress' =>  $this->species(),
+                        'progress' =>  $this->species()/1024*100,
+                        'value' =>  $this->species(),
                         'color' => 'success'
                 ],
                 [
                         'name' => 'Collector',
-                        'progress' =>  $this->collector(),
+                        'progress' =>  $this->collector()/1024*100,
+                        'value' =>  $this->collector(),
                         'color' => 'info'
                 ],
                 [
                         'name' => 'Determine',
-                        'progress' =>  $this->determine(),
+                        'progress' =>  $this->determine()/1024*100,
+                        'value' =>  $this->determine(),
                         'color' => 'warning'
                 ]
         ];
         return view('dashboard_view/weed/weedView')->with($data);
     }
 
+
         protected function family()
         {
-                $speciment = Herbarium::where('type_herbarium', 1)->select('species_id')->first();
-                if($speciment != null){
-                        $species = $speciment->species->genus->family->name_family;
-                        $family= count($species);
-                        return $family;
-                }else
-                        return 0;
+                $speciment = Family::count();
+
+                return $speciment;
         }
 
         protected function genus()
         {
-                $speciment = Herbarium::where('type_herbarium', 1)->select('species_id')->first();
-                if($speciment != null){
-                        $species = $speciment->species->genus->name_genus;
-                        $genus= count($species);
-                        return $genus;
-                }else
-                        return 0;
+                   $speciment = Genus::count();
+
+                return $speciment;
         }
 
         protected function species()
         {
-                $speciment = Herbarium::where('type_herbarium', 1)->select('species_id')->first();
-                if($speciment != null){
-                        $species = count($speciment->species->name_species);
-                        return $species;
-                }else
-                        return 0;
+                $speciment = Species::count();
+
+                return $speciment;
         }
 
         protected function collector()
         {
-                $collect = Herbarium::where('type_herbarium', 1)->select('collector_id')->first();
-                if($collect!= null){
-                        $collector = count($collect);
-                        return $collector;
-                }else
-                        return 0;
+               $speciment = Collector::distinct()->count('name_collector');
+
+                return $speciment;
         }
 
         protected function determine()
         {
-                $deter = Herbarium::where('type_herbarium', 1)->select('authorIdentification_id')->first();
-                if($deter != null){
-                        $determine =count($deter);
-                        return $determine;
-                }else
-                        return 0;
+               $speciment = AuthorIdent::distinct()->count('name_author');
+               return $speciment;
         }
 }

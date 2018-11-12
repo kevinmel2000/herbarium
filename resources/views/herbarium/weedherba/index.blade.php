@@ -47,7 +47,7 @@
                                         <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Label_Herbarium: activate to sort column descending" aria-sort="ascending" style="text-align: center">Specimen Number</th>
                                         <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Species: activate to sort column descending" aria-sort="ascending" style="text-align:center">Species</th>
                                         <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Collector: activate to sort column descending" aria-sort="ascending" style="text-align:center">Collector</th>
-                                        <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Determinate: activate to sort column descending" aria-sort="ascending" style="text-align:center">Determine</th>
+                                       
                                         <th width="10%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-lable="Species: activate to sort column descending" aria-sort="ascending" style="text-align:center">Verification</th>
                                         <th width="15%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-lable="Id: activate to sort column descending" aria-sort="ascending" style="text-align:center">Action</th>
                                     </tr>
@@ -58,9 +58,9 @@
                                             @if($herba->type == 1)
                                                 <tr role="row" class="odd">
                                                     <td class="sorting_1 text-center">{{ $herba->label }}</td>
-                                                    <td class="sorting hidden-xs text-left">{{ $herba->name_genus.' '.$herba->name_species }}</td>
+                                                    <td class="sorting hidden-xs text-left"><i>{{ $herba->name_genus.' '.$herba->name_species }}</i>  {{ $herba->name_author }}</td>
                                                     <td class="sorting hidden-xs text-left">{{ $herba->name_collector }}</td>
-                                                    <td class="sorting  text-left">{{ $herba->name_author }}</td>
+                                                    
                                                     <td class="sorting  text-center">
                                                         @if($herba->status == '0')
                                                             <span style="color:green; text-align:center"><b>Process</b></span>
