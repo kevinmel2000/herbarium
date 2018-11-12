@@ -32,18 +32,19 @@ class WeedHerbaController extends Controller
 {
      protected function index()
      {
-         $speciment_herbarium = DB::table('speciment_herbarium')
-         ->join('species', 'speciment_herbarium.species_id', '=', 'species.id_species')
-         ->join('users', 'speciment_herbarium.user_id', '=', 'users.id')
-         ->join('verified', 'speciment_herbarium.verifiedData_id', '=', 'verified.id_verified')
-         ->join('collector', 'speciment_herbarium.collector_id', '=', 'collector.id_collector')
-         ->join('herbarium_type', 'speciment_herbarium.type_herbarium', '=', 'herbarium_type.id_type')
-         ->join('herba_author', 'speciment_herbarium.authorIdentification_id', '=', 'herba_author.id_authorHerba')
-         ->join('author_identification', 'herba_author.author1_id', '=', 'author_identification.id_author')
-         ->select('speciment_herbarium.*', 'species.name_species', 'users.user_type', 'herbarium_type.type',  'collector.name_collector', 'author_identification.name_author', 'verified.status')
-         ->paginate(5);
+      $speciment_herbarium = DB::table('speciment_herbarium')
+   ->join('species', 'speciment_herbarium.species_id', '=', 'species.id_species')
+   ->join('genus', 'genus.id_genus', '=', 'species.genus_id')
+   ->join('users', 'speciment_herbarium.user_id', '=', 'users.id')
+   ->join('verified', 'speciment_herbarium.verifiedData_id', '=', 'verified.id_verified')
+   ->join('collector', 'speciment_herbarium.collector_id', '=', 'collector.id_collector')
+   ->join('herbarium_type', 'speciment_herbarium.type_herbarium', '=', 'herbarium_type.id_type')
+   ->join('herba_author', 'speciment_herbarium.authorIdentification_id', '=', 'herba_author.id_authorHerba')
+   ->join('author_identification', 'herba_author.author1_id', '=', 'author_identification.id_author')
+   ->select('speciment_herbarium.*', 'species.name_species', 'genus.name_genus', 'users.user_type', 'herbarium_type.type',  'collector.name_collector', 'author_identification.name_author', 'verified.status')
+   ->paginate(25);
         // dd($speciment_herbarium);
-        return view('herbarium/weedherba/index', ['speciment_herbarium'=> $speciment_herbarium]);
+   return view('herbarium/weedherba/index', ['speciment_herbarium'=> $speciment_herbarium]);
         
      }
      
@@ -158,11 +159,16 @@ class WeedHerbaController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        $file = $request->file('image');
-        $fileName = $file->getClientOriginalName();
-        $request->file('image')->move("herba/",$fileName);
-
-        if ($request->file('image2') != null){
+	
+	if($request->file('image') != null){        
+		$file = $request->file('image');
+		$fileName = $file->getClientOriginalName();
+        	$request->file('image')->move("herba/",$fileName);
+	}else{
+		$fileName = null;
+	}
+        
+	if ($request->file('image2') != null){
             $file1 = $request->file('image2');
             $fileName1 = $file1->getClientOriginalName();
             $request->file('image2')->move("herba/",$fileName1);

@@ -58,7 +58,7 @@
                                             @if($herba->type == 1)
                                                 <tr role="row" class="odd">
                                                     <td class="sorting_1 text-center">{{ $herba->label }}</td>
-                                                    <td class="sorting hidden-xs text-left">{{ $herba->name_species }}</td>
+                                                    <td class="sorting hidden-xs text-left">{{ $herba->name_genus.' '.$herba->name_species }}</td>
                                                     <td class="sorting hidden-xs text-left">{{ $herba->name_collector }}</td>
                                                     <td class="sorting  text-left">{{ $herba->name_author }}</td>
                                                     <td class="sorting  text-center">

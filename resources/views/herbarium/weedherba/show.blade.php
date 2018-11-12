@@ -37,7 +37,7 @@
                                 @endif
                             
                             @else
-                                <i>{{$speciment_herbarium->species->name_species}}</i>
+                                <i>{{$speciment_herbarium->species->genus->name_genus }} {{$speciment_herbarium->species->name_species}}</i> {{$speciment_herbarium->author}}
                             @endif
                         </h2>
                     </div>
@@ -614,6 +614,7 @@
                     </div>
                     <div class="box-body">             
                         <div class="col-md-8">
+                            {{-- DISABLED LOCATION
                                 @if(isset($speciment_herbarium->location->districts->city->prov->state->name))
                                     <div class="col-md-12" style="margin-top:10px">
                                         <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Country</label>
@@ -649,10 +650,10 @@
                                         </span>
                                     </div>
                                 @endif
-                                
+                            --}}
                                 @if(isset($speciment_herbarium->location->vilage))
                                     <div class="col-md-12" style="margin-top:10px">
-                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Vilage</label>
+                                        <label for="name_family" class="col-md-3 col-md-offset-1" style="text-align:left">Location</label>
                                         <span class="col-md-8" align="justify">
                                             {{$speciment_herbarium->location->vilage}}
                                         </span>

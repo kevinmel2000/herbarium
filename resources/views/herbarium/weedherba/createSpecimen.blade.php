@@ -35,7 +35,7 @@
                                             <input type="hidden" name="data3" value="{{$data['author']}}">
                                     
                                             <div class="form-group{{ $errors->has('label_weed') ? ' has-error' : '' }}" >
-                                                <label for="label_weed" class="col-md-2 col-md-offset-1" style="text-align:left">Label Weed</label>
+                                                <label for="label_weed" class="col-md-2 col-md-offset-1" style="text-align:left">Label Number</label>
                                                 <div class="col-md-2">
                                                     <input id="label_weed" placehold="Amount" type="number" class="form-control" name="label_weed" value="{{ old('label_weed') }}">
                                                     @if ($errors->has('label_weed'))
@@ -130,6 +130,19 @@
                                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
                                             </div>
         
+                                               <div class="form-group{{ $errors->has('author') ? ' has-error' : '' }}"  >
+                                                <label for="author" class="col-md-2 col-md-offset-1" style="text-align:left">Author</label>
+                                                <div class="col-md-6">
+                                                    <input id="subspecies" type="text" placeholder="Author name" class="form-control" name="author" value="{{ old('author') }}">
+                                                    @if ($errors->has('author'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('author') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+
                                             <div class="form-group{{ $errors->has('subspecies') ? ' has-error' : '' }}"  >
                                                 <label for="subspecies" class="col-md-2 col-md-offset-1" style="text-align:left">Subspecies</label>
                                                 <div class="col-md-6">

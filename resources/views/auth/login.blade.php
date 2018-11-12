@@ -76,9 +76,10 @@
                             <label for="g-recaptcha-response" class="col-md-4 control-label"></label>
 
                             <div class="col-md-6">
-                                {!! app('captcha')->display()!!}
+                                {{-- {!! app('captcha')->display()!!}
                                 {!! $errors->first('g-recaptcha-response', '<p class="help-block"><span style="color:red">The g-recaptcha response field is required</span></p>')!!}
-                            </div>
+                                --}}
+				</div>
                           </div>
 
                         <div class="form-group">
