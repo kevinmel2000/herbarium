@@ -313,10 +313,9 @@ class WeedHerbaController extends Controller
         // dd($collect);
         $author  = $speciment_herbarium->authorIdentification_id;
         $location= $speciment_herbarium->location_id;
-        $state = $speciment_herbarium->location->districts->city->prov->state->orderBy('name', 'asc')->get();
         $data =['collect'=>$collect, 'author'=>$author, 'location'=>$location];
         // dd($data);
-        return view('herbarium/weedherba/edit', ['speciment_herbarium' => $speciment_herbarium, 'data'=>$data, "state"=>$state]);
+        return view('herbarium/weedherba/edit', ['speciment_herbarium' => $speciment_herbarium, 'data'=>$data]);
     }
 
    

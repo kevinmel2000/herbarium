@@ -86,7 +86,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                
+                                                {{--
                                                 <div class="form-group{{ $errors->has('id_state') ? ' has-error' : '' }}" >
                                                     <label for="id_state" class="col-md-2 col-md-offset-1" style="text-align= left ">Country</label>
                                                     <div class="col-md-6">
@@ -128,9 +128,9 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                
+                                                --}}
                                                 <div class="form-group{{ $errors->has('name_vilage') ? ' has-error' : '' }}" >
-                                                    <label for="name_vilage" class="col-md-2 col-md-offset-1" style="text-align= left ">Vilage</label>
+                                                    <label for="name_vilage" class="col-md-2 col-md-offset-1" style="text-align= left ">Location</label>
                                                     <div class="col-md-6">
                                                         <input id="name_vilage" type="text" class="form-control" placeholder="Vilage Name" name="name_vilage" value="{{ $speciment_herbarium->location->vilage }}" autofocus>
                                                         @if ($errors->has('name_vilage'))
